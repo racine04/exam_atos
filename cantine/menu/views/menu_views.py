@@ -7,7 +7,7 @@ from menu.forms import MenuForm
 def menu_list(request):
     search_field= request.GET.get('search')
     if search_field :
-        menu = MenuModel.objects.filter(nom__icontains=search_field) | MenuModel.objects.filter(prenom__icontains=search_field)
+        menu = MenuModel.objects.filter(id__icontains=search_field)
         context = {
             'menus': menu,
             'search_field':search_field,
