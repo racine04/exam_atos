@@ -4,8 +4,6 @@ Bienvenue dans le projet **Cantine**. Ce projet est une application web de gesti
 
 ## Prérequis
 
-Avant de commencer, assurez-vous que vous avez les éléments suivants installés sur votre machine :
-
 - [Python 3.12+](https://www.python.org/downloads/)
 - [Git](https://git-scm.com/) (optionnel, pour cloner le projet)
 - [pip](https://pip.pypa.io/en/stable/installation/) (Gestionnaire de paquets Python)
@@ -16,57 +14,22 @@ Suivez ces étapes pour installer et configurer le projet localement :
 
 ### 1. Cloner le dépôt
 
-Clonez ce dépôt en utilisant Git, ou téléchargez-le en tant qu'archive ZIP :
-
 2. Créer et activer un environnement virtuel
-Créez un environnement virtuel pour isoler les dépendances du projet :
-
 python -m venv env
 Activez l'environnement virtuel :
-
 Sur Windows :
 env\Scripts\activate
 Sur macOS/Linux :
-
 source env/bin/activate
-3. Installer les dépendances
-Installez les dépendances nécessaires à partir du fichier requirements.txt :
 
+3. Installer les dépendances du fichier à partir requirements.txt
 pip install -r requirements.txt
-Les modules principaux installés sont :
 
-django-crispy-forms
-django-bootstrap4
-pymysql
 4. Configuration de la base de données
 Assurez-vous d'avoir MySQL installé et configuré sur votre machine.
-
 Créez une base de données nommée cantine_bd dans MySQL.
-Vous pouvez le faire avec la commande suivante dans MySQL :
+Ensuite, modifiez les paramètres de connexion à la base de données dans le fichier settings.py
 
-CREATE DATABASE cantine_bd;
-Ensuite, modifiez les paramètres de connexion à la base de données dans le fichier settings.py :
+5. Appliquer les migrations avec python manage.py makemigrations puis python manage.py migrate
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cantine_bd',
-        'USER': 'votre_nom_utilisateur_mysql',
-        'PASSWORD': 'votre_mot_de_passe_mysql',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-
-5. Appliquer les migrations
-Exécutez les migrations pour configurer la base de données :
-
-python manage.py migrate
-
-
-
-python manage.py createsuperuser
-6. Lancer le serveur de développement
-Vous pouvez maintenant lancer le serveur de développement :
-
-python manage.py runserver
+6. Lancer le serveur de développement avec python manage.py runserver
