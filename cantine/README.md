@@ -1,0 +1,1 @@
+Pour lancer le projet il vous faut installer et configurer les modeules crispy_forms bootstrap4 et pymysql puis creer votre base de donnees cantine_bd et lancer le projet en faisant python manage.py run server
