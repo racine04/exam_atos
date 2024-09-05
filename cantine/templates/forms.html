@@ -15,7 +15,7 @@
             <div class="card-body">
               <form role="form" method="POST">
                 {% csrf_token %}
-                {{ dishes_form | crispy }} {{ menu_form | crispy }}
+                {{ dishes_form | crispy }} {{ form | crispy }}
                 <div class="text-center">
                   <button
                     type="submit"
